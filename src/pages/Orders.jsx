@@ -13,7 +13,7 @@ const AdminOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:3500/api/admin/orders", config);
+      const res = await axios.get("https://solebackend.onrender.com/api/admin/orders", config);
       setOrders(res.data);
     } catch (err) {
       console.error(err);
