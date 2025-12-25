@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const API = axios.create({
+const adminAPI = axios.create({
   baseURL: "https://solebackend.onrender.com/api",
 });
 
-API.interceptors.request.use(config => {
+adminAPI.interceptors.request.use(config => {
   const token = localStorage.getItem("adminToken");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -12,4 +12,4 @@ API.interceptors.request.use(config => {
   return config;
 });
 
-export default API;
+export default adminAPI;
