@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://solebackend.onrender.com/api/admin",
+  baseURL: "https://solebackend.onrender.com/api/admin/auth/login",
 });
 
 API.interceptors.request.use(config => {
