@@ -1,4 +1,3 @@
-// src/context/UserContext.js
 import { createContext, useContext, useEffect, useState } from "react";
 
 const UserContext = createContext();
@@ -9,11 +8,7 @@ export const UserProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
-    } else {
-      localStorage.removeItem("user");
-    }
+    if (user) localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
 
   const login = (userData) => {
@@ -24,7 +19,7 @@ export const UserProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
-    localStorage.removeItem("cart"); // optional: clear cart on logout
+    localStorage.removeItem("cart");
   };
 
   return (
